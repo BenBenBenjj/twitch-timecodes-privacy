@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Twitch Timecodes — Connexion</title>
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #18181b;
+            color: #efeff1;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+        }
+
+        .box {
+            width: 90%;
+            max-width: 500px;
+
+            padding: 30px;
+
+            background: #26262b;
+            border-radius: 12px;
+
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0 0 15px;
+
+            color: #9147ff;
+
+            font-size: 24px;
+        }
+
+        p {
+            color: #adadb8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        #status {
+            margin-top: 20px;
+
+            color: #efeff1;
+
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+
+        <h1>🎬 Twitch Timecodes</h1>
+
+        <p>
+            Connexion à Twitch en cours...
+        </p>
+
+        <div id="status">
+            Veuillez patienter.
+        </div>
+
+    </div>
+
+    <script>
+        const status =
+            document.getElementById(
+                "status"
+            );
+
+        const hash =
+            window.location.hash;
+
+        if (
+            hash &&
+            hash.length > 1
+        ) {
+
+            status.textContent =
+                "Autorisation reçue. Retour vers Twitch Timecodes...";
+
+        } else {
+
+            status.textContent =
+                "Aucune autorisation Twitch reçue.";
+        }
+    </script>
+
+</body>
+</html>
